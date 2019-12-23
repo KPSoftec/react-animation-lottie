@@ -1,56 +1,54 @@
+'use strict';
 
-
-Object.defineProperty(exports, '__esModule', {
-  value: true,
+Object.defineProperty(exports, "__esModule", {
+  value: true
 });
 
-const _extends2 = require('babel-runtime/helpers/extends');
+var _extends2 = require('babel-runtime/helpers/extends');
 
-const _extends3 = _interopRequireDefault(_extends2);
+var _extends3 = _interopRequireDefault(_extends2);
 
-const _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
+var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
 
-const _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
+var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
 
-const _classCallCheck2 = require('babel-runtime/helpers/classCallCheck');
+var _classCallCheck2 = require('babel-runtime/helpers/classCallCheck');
 
-const _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
 
-const _createClass2 = require('babel-runtime/helpers/createClass');
+var _createClass2 = require('babel-runtime/helpers/createClass');
 
-const _createClass3 = _interopRequireDefault(_createClass2);
+var _createClass3 = _interopRequireDefault(_createClass2);
 
-const _possibleConstructorReturn2 = require('babel-runtime/helpers/possibleConstructorReturn');
+var _possibleConstructorReturn2 = require('babel-runtime/helpers/possibleConstructorReturn');
 
-const _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
+var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
 
-const _inherits2 = require('babel-runtime/helpers/inherits');
+var _inherits2 = require('babel-runtime/helpers/inherits');
 
-const _inherits3 = _interopRequireDefault(_inherits2);
+var _inherits3 = _interopRequireDefault(_inherits2);
 
-const _react = require('react');
+var _react = require('react');
 
-const _react2 = _interopRequireDefault(_react);
+var _react2 = _interopRequireDefault(_react);
 
-const _propTypes = require('prop-types');
+var _propTypes = require('prop-types');
 
-const _propTypes2 = _interopRequireDefault(_propTypes);
+var _propTypes2 = _interopRequireDefault(_propTypes);
 
-const _lottieWeb = require('lottie-web');
+var _lottieWeb = require('lottie-web');
 
-const _lottieWeb2 = _interopRequireDefault(_lottieWeb);
+var _lottieWeb2 = _interopRequireDefault(_lottieWeb);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-const Lottie = (function (_React$Component) {
+var Lottie = function (_React$Component) {
   (0, _inherits3.default)(Lottie, _React$Component);
 
   function Lottie() {
-    let _ref;
+    var _ref;
 
-    let _temp,
-      _this,
-      _ret;
+    var _temp, _this, _ret;
 
     (0, _classCallCheck3.default)(this, Lottie);
 
@@ -72,14 +70,14 @@ const Lottie = (function (_React$Component) {
   (0, _createClass3.default)(Lottie, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
-      let _props = this.props,
-        options = _props.options,
-        eventListeners = _props.eventListeners;
-      let loop = options.loop,
-        autoplay = options.autoplay,
-        animationData = options.animationData,
-        rendererSettings = options.rendererSettings,
-        segments = options.segments;
+      var _props = this.props,
+          options = _props.options,
+          eventListeners = _props.eventListeners;
+      var loop = options.loop,
+          autoplay = options.autoplay,
+          animationData = options.animationData,
+          rendererSettings = options.rendererSettings,
+          segments = options.segments;
 
 
       this.options = {
@@ -88,15 +86,15 @@ const Lottie = (function (_React$Component) {
         loop: loop !== false,
         autoplay: autoplay !== false,
         segments: segments !== false,
-        animationData,
-        rendererSettings,
+        animationData: animationData,
+        rendererSettings: rendererSettings
       };
 
       this.options = (0, _extends3.default)({}, this.options, options);
 
       this.anim = _lottieWeb2.default.loadAnimation(this.options);
       this.registerEvents(eventListeners);
-    },
+    }
   }, {
     key: 'componentWillUpdate',
     value: function componentWillUpdate(nextProps /* , nextState */) {
@@ -108,7 +106,7 @@ const Lottie = (function (_React$Component) {
         this.anim = _lottieWeb2.default.loadAnimation(this.options);
         this.registerEvents(nextProps.eventListeners);
       }
-    },
+    }
   }, {
     key: 'componentDidUpdate',
     value: function componentDidUpdate() {
@@ -123,7 +121,7 @@ const Lottie = (function (_React$Component) {
       this.pause();
       this.setSpeed();
       this.setDirection();
-    },
+    }
   }, {
     key: 'componentWillUnmount',
     value: function componentWillUnmount() {
@@ -131,32 +129,32 @@ const Lottie = (function (_React$Component) {
       this.destroy();
       this.options.animationData = null;
       this.anim = null;
-    },
+    }
   }, {
     key: 'setSpeed',
     value: function setSpeed() {
       this.anim.setSpeed(this.props.speed);
-    },
+    }
   }, {
     key: 'setDirection',
     value: function setDirection() {
       this.anim.setDirection(this.props.direction);
-    },
+    }
   }, {
     key: 'play',
     value: function play() {
       this.anim.play();
-    },
+    }
   }, {
     key: 'playSegments',
     value: function playSegments() {
       this.anim.playSegments(this.props.segments);
-    },
+    }
   }, {
     key: 'stop',
     value: function stop() {
       this.anim.stop();
-    },
+    }
   }, {
     key: 'pause',
     value: function pause() {
@@ -165,50 +163,50 @@ const Lottie = (function (_React$Component) {
       } else if (!this.props.isPaused && this.anim.isPaused) {
         this.anim.pause();
       }
-    },
+    }
   }, {
     key: 'destroy',
     value: function destroy() {
       this.anim.destroy();
-    },
+    }
   }, {
     key: 'registerEvents',
     value: function registerEvents(eventListeners) {
-      const _this2 = this;
+      var _this2 = this;
 
       eventListeners.forEach(function (eventListener) {
         _this2.anim.addEventListener(eventListener.eventName, eventListener.callback);
       });
-    },
+    }
   }, {
     key: 'deRegisterEvents',
     value: function deRegisterEvents(eventListeners) {
-      const _this3 = this;
+      var _this3 = this;
 
       eventListeners.forEach(function (eventListener) {
         _this3.anim.removeEventListener(eventListener.eventName, eventListener.callback);
       });
-    },
+    }
   }, {
     key: 'render',
     value: function render() {
-      const _this4 = this;
+      var _this4 = this;
 
-      let _props2 = this.props,
-        width = _props2.width,
-        height = _props2.height,
-        ariaRole = _props2.ariaRole,
-        ariaLabel = _props2.ariaLabel,
-        isClickToPauseDisabled = _props2.isClickToPauseDisabled,
-        title = _props2.title,
+      var _props2 = this.props,
+          width = _props2.width,
+          height = _props2.height,
+          ariaRole = _props2.ariaRole,
+          ariaLabel = _props2.ariaLabel,
+          isClickToPauseDisabled = _props2.isClickToPauseDisabled,
+          title = _props2.title,
 		      margin = _props2.margin;
 
 
-      const getSize = function getSize(initial) {
-        let size = void 0;
+      var getSize = function getSize(initial) {
+        var size = void 0;
 
         if (typeof initial === 'number') {
-          size = `${initial}px`;
+          size = initial + 'px';
         } else {
           size = initial || '100%';
         }
@@ -216,15 +214,15 @@ const Lottie = (function (_React$Component) {
         return size;
       };
 
-      const lottieStyles = (0, _extends3.default)({
+      var lottieStyles = (0, _extends3.default)({
         width: getSize(width),
         height: getSize(height),
         overflow: 'hidden',
-        margin,
-        outline: 'none',
+        margin: margin,
+        outline: 'none'
       }, this.props.style);
 
-      const onClickHandler = isClickToPauseDisabled ? function () {
+      var onClickHandler = isClickToPauseDisabled ? function () {
         return null;
       } : this.handleClickToPause;
 
@@ -237,16 +235,16 @@ const Lottie = (function (_React$Component) {
           },
           style: lottieStyles,
           onClick: onClickHandler,
-          title,
+          title: title,
           role: ariaRole,
           'aria-label': ariaLabel,
-          tabIndex: '0',
+          tabIndex: '0'
         })
       );
-    },
+    }
   }]);
   return Lottie;
-}(_react2.default.Component));
+}(_react2.default.Component);
 
 exports.default = Lottie;
 
@@ -277,5 +275,5 @@ Lottie.defaultProps = {
   ariaLabel: 'animation',
   isClickToPauseDisabled: false,
   title: '',
-  margin: '0 auto',
+  margin: '0 auto'
 };
