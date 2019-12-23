@@ -1,9 +1,9 @@
 # Lottie Animation View for React ([Angular](https://github.com/KPSoftec/ng-lottie), [Vue](https://github.com/KPSoftec/vue-lottie))
 
-[![npm version](https://badge.fury.io/js/react-lottie.svg)](http://badge.fury.io/js/react-lottie)
+[![npm version](https://badge.fury.io/js/react-animation-lottie.svg)](http://badge.fury.io/js/react-animation-lottie)
 
 ## Demo
-https://KPSoftec.github.io/react-lottie
+https://KPSoftec.github.io/react-animation-lottie
 
 ## Wapper of bodymovin.js
 
@@ -28,7 +28,7 @@ Looking for lottie files › https://www.lottiefiles.com/
 
 Install through npm:
 ```
-npm install --save react-lottie
+npm install --save react-animation-lottie
 ```
 
 ## Usage
@@ -37,7 +37,7 @@ Import pinjump.json.json as animation data
 
 ```jsx
 import React from 'react'
-import Lottie from 'react-lottie';
+import Lottie from 'react-animation-lottie';
 import * as animationData from './pinjump.json'
 
 export default class LottieControl extends React.Component {
@@ -66,6 +66,7 @@ export default class LottieControl extends React.Component {
       <Lottie options={defaultOptions}
               height={400}
               width={400}
+              margin={'0 auto'}
               isStopped={this.state.isStopped}
               isPaused={this.state.isPaused}/>
       <button style={buttonStyle} onClick={() => this.setState({isStopped: true})}>stop</button>
@@ -100,6 +101,10 @@ pixel value for containers width.
 
 pixel value for containers height.
 
+**margin** *optional* [default: `0 auto`]
+
+pixel value for containers margin.
+
 **eventListeners** *optional* [default: `[]`]
 
 This is an array of objects containing a `eventName` and `callback` function that will be registered as  eventlisteners on the animation object. refer to [bodymovin#events](https://github.com/bodymovin/bodymovin#events) where the mention using addEventListener, for a list of available custom events.
@@ -116,7 +121,7 @@ eventListeners=[
 
 ## Related Projects
 
-* [Bodymovin](https://github.com/bodymovin/bodymovin) react-lottie is a wrapper of bodymovin
+* [Bodymovin](https://github.com/bodymovin/bodymovin) react-animation-lottie is a wrapper of bodymovin
 * [Angular Lottie](https://github.com/KPSoftec/ng-lottie) angular implementation
 * [Vue Lottie](https://github.com/KPSoftec/vue-lottie) vue implementation
 * [React Native Lottie](https://github.com/airbnb/lottie-react-native) react native implementation by airbnb
